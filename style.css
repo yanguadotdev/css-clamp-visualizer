@@ -86,6 +86,41 @@ body {
     padding-right: .75rem;
 }
 
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Eliminar controles en Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+.output-code .input {
+    width: 2.5em;
+    padding: .15rem .25rem;
+    border-radius: .25rem;
+    background-color: hsl(0, 0%, 92%);
+}
+
+.output-code .highlight {
+    border-bottom: 2px dashed #daa520;
+    background: #ffd700;
+}
+
+.output-code input {
+    text-align: center;
+    background-color: transparent;
+    border: none;
+    width: 2.5em;
+}
+
+.output-code input:focus {
+    outline: none;
+}
+
 code .css-property {
     color: #09a;
 }
@@ -101,6 +136,10 @@ code .css-property {
     transform-origin: center;
 }
 
+code .css-function {
+    color: teal;
+}
+
 .btn-copy-code:hover {
     color: hsl(0, 0%, 35%);
 }
@@ -108,6 +147,26 @@ code .css-property {
 .btn-copy-code:active {
     transform: scale(.95);
 }
+
+@media screen and (width < 420px) {
+    .code-container {
+        font-size: .75rem;
+    }
+
+    code .css-property {
+        display: none;
+    }
+
+    .parent p {
+        font-size: .75rem;
+    }
+
+    .btn-copy-code>svg {
+        width: 16px;
+        height: 16px;
+    }
+}
+
 
 .window,
 .actual {
@@ -152,7 +211,7 @@ code .css-property {
     padding: .5rem;
     border-radius: .25rem;
     background-color: #f5f5f5;
-    font-size: clamp(24px, 4vw, 48px);
+    font-size: var(--font-size);
 }
 
 .font-viewer__text:focus {
@@ -170,12 +229,8 @@ code .css-property {
     background: #ffd700;
 }
 
-.window,
-.highlight {
+.window {
     background: #fff0f5;
     border-bottom: 3px dashed #daa520;
 }
 
-.highlight {
-    background: #ffd700;
-}

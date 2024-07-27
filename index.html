@@ -25,7 +25,11 @@
         <div class="code-container">
             <code class="output-code">
                 <span class="css-property">font-size:</span> 
-                <span class="css-function">clamp(</span><span class="min css-value">24px</span>, <span class="ideal css-value">4vw</span>, <span class="max css-value">48px</span><span class="css-function">)</span>;
+                <span class="css-function">clamp(</span>
+                <span class="min input"><input type="number" placeholder="min" value="24">px</span>, 
+                <span  class="ideal input"><input type="number" placeholder="def" value="4">vw</span>, 
+                <span  class="max input"><input type="number" placeholder="max" value="48">px</span>
+                <span class="css-function">);</span>
             </code>
 
             <button class="btn-copy-code">
@@ -37,7 +41,7 @@
             </button>
         </div>
         
-        <div class="element font-viewer">
+        <div class="font-viewer" style="--font-size: clamp(24px, 4vw, 48px);">
             <span class="tag">vista previa</span>
             <p contenteditable="true" class="font-viewer__text">Diseño y Desarrollo Web</p>
             <span class="font-viewer__value">Actual font-size: <span class="actual"></span></span>
