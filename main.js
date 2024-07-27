@@ -5,7 +5,10 @@ const $ideal = document.querySelector('.ideal')
 const $minInput = document.querySelector('.min input')
 const $maxInput = document.querySelector('.max input')
 const $idealInput = document.querySelector('.ideal input')
-let cssFunctionCode = $textElement.style.getPropertyValue('--font-size')
+const $outputCode = document.querySelector('.output-code')
+const $btnCopy = document.querySelector('.js-button-copy')
+let cssFunctionCode =
+  $textElement.parentElement.style.getPropertyValue('--font-size')
 
 const updateValues = () => {
   let pageWidth = window.innerWidth
@@ -35,6 +38,34 @@ const checkFontSize = (fontSizeText) => {
   else removeClass($ideal)
 }
 
+function showCopyAnimation() {
+  $outputCode.classList.add('is-copied')
+  setTimeout(() => {
+    $outputCode.classList.remove('is-copied')
+  }, 500)
+}
+
+function handleButtonClick() {
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(`font-size: ${cssFunctionCode};`).then(() => {
+      showCopyAnimation()
+    })
+  } else {
+    // Provide an alternative method for copying if Clipboard API is not supported
+    const textArea = document.createElement('textarea')
+    textArea.value = `font-size: ${cssFunctionCode};`
+    document.body.appendChild(textArea)
+    textArea.select()
+    try {
+      document.execCommand('copy')
+      showCopyAnimation()
+    } catch (err) {
+      alert('Clipboard API not supported')
+    }
+    document.body.removeChild(textArea)
+  }
+}
+
 function limitNumbers() {
   this.value = this.value.slice(0, 3)
 }
@@ -60,3 +91,5 @@ $maxInput.oninput = function () {
 $idealInput.oninput = function () {
   onInput(this)
 }
+
+$btnCopy.onclick = handleButtonClick

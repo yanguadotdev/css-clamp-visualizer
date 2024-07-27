@@ -85,6 +85,24 @@ body {
 .output-code {
     border-right: 1px solid hsl(0, 0%, 70%);
     padding-right: .75rem;
+    position: relative;
+}
+
+.output-code.is-copied::after {
+    position: absolute;
+    content: '';
+    inset: -4px;
+    inset-block-end: -6px;
+    inset-inline-end: 8px;
+    background-color: hsla(120, 61%, 50%, .3);
+    border-radius: .25rem;
+    animation: fade 300ms 2 forwards;
+}
+
+@keyframes fade {
+    to {
+        opacity: 0;
+    }
 }
 
 input[type="number"]::-webkit-inner-spin-button,
