@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS clamp Visualizer</title>
+
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/fonts.css">
+    <script type="module" src="/main.js"></script>
+</head>
+
+<body>
+
+        <div class="parent">
+            <div class="line"></div>
+            <p>Parent (window) width: <span class="window"></span></p>
+            <div class="line"></div>
+        </div>
+        
+        <h1 class="title"><code>CSS clamp() function</code>
+        </h1>
+        
+        <div class="code-container">
+            <code class="output-code">
+                <span class="css-property">font-size:</span> 
+                <span class="css-function">clamp(</span><span class="min css-value">24px</span>, <span class="ideal css-value">4vw</span>, <span class="max css-value">48px</span><span class="css-function">)</span>;
+            </code>
+
+            <button class="btn-copy-code">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M15.666 3.888A2.25 2.25 0 0 0 13.5 2.25h-3c-1.03 0-1.9.693-2.166 1.638m7.332 0c.055.194.084.4.084.612v0a.75.75 0 0 1-.75.75H9a.75.75 0 0 1-.75-.75v0c0-.212.03-.418.084-.612m7.332 0c.646.049 1.288.11 1.927.184 1.1.128 1.907 1.077 1.907 2.185V19.5a2.25 2.25 0 0 1-2.25 2.25H6.75A2.25 2.25 0 0 1 4.5 19.5V6.257c0-1.108.806-2.057 1.907-2.185a48.208 48.208 0 0 1 1.927-.184" />
+                </svg>
+
+            </button>
+        </div>
+        
+        <div class="element font-viewer">
+            <span class="tag">vista previa</span>
+            <p contenteditable="true" class="font-viewer__text">Diseño y Desarrollo Web</p>
+            <span class="font-viewer__value">Actual font-size: <span class="actual"></span></span>
+        </div>
+
+</body>
+
+</html>
