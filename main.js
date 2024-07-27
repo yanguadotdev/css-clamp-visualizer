@@ -4,6 +4,8 @@ const $min = document.querySelector('.min')
 const $ideal = document.querySelector('.ideal')
 const $minInput = document.querySelector('.min input')
 const $maxInput = document.querySelector('.max input')
+const $idealInput = document.querySelector('.ideal input')
+let cssFunctionCode = $textElement.style.getPropertyValue('--font-size')
 
 const updateValues = () => {
   let pageWidth = window.innerWidth
@@ -33,5 +35,28 @@ const checkFontSize = (fontSizeText) => {
   else removeClass($ideal)
 }
 
+function limitNumbers() {
+  this.value = this.value.slice(0, 3)
+}
+
+function onInput(inputElement) {
+  limitNumbers.call(inputElement)
+  cssFunctionCode = `clamp(${$minInput.value}px, ${$idealInput.value}vw, ${$maxInput.value}px)`
+  $textElement.parentElement.style.setProperty('--font-size', cssFunctionCode)
+  updateValues()
+}
+
 updateValues()
+
+// EVENTS
 window.onresize = updateValues
+
+$minInput.oninput = function () {
+  onInput(this)
+}
+$maxInput.oninput = function () {
+  onInput(this)
+}
+$idealInput.oninput = function () {
+  onInput(this)
+}
