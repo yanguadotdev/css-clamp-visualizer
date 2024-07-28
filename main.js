@@ -10,6 +10,19 @@ const $btnCopy = document.querySelector('.js-button-copy')
 let cssFunctionCode =
   $textElement.parentElement.style.getPropertyValue('--font-size')
 
+// funcion que se ejecutara al terminar de cargar el DOM
+// para agregar una aniamcion y destacar los inputs que se pueden editar
+window.addEventListener('DOMContentLoaded', () => {
+  $min.classList.add('animation')
+  $ideal.classList.add('animation')
+  $max.classList.add('animation')
+  setTimeout(() => {
+    $min.classList.remove('animation')
+    $ideal.classList.remove('animation')
+    $max.classList.remove('animation')
+  }, 2000)
+})
+
 const updateValues = () => {
   let pageWidth = window.innerWidth
   let fontSizeText = getComputedStyle($textElement).fontSize.slice(0, -2)
