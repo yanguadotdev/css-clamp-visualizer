@@ -48,7 +48,3 @@ Aquí tienes un ejemplo de cómo se ve la herramienta en acción:
 ## 🤝 Contribuciones
 
 ¡Las contribuciones son bienvenidas! Si tienes alguna mejora o encuentras algún error, no dudes en crear un pull request o abrir un issue. 🚀
-
-## 📄 Licencia
-
-Este proyecto está bajo la Licencia MIT. Para más detalles, consulta el archivo `LICENSE`. 📜

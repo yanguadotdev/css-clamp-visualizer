@@ -12,7 +12,7 @@ let cssFunctionCode =
 
 // funcion que se ejecutara al terminar de cargar el DOM
 // para agregar una aniamcion y destacar los inputs que se pueden editar
-window.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('load', () => {
   $min.classList.add('animation')
   $ideal.classList.add('animation')
   $max.classList.add('animation')
